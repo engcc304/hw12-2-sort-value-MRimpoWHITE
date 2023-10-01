@@ -1,29 +1,29 @@
 /*
     สร้าง Struct เพื่อเก็บข้อมูลของคน 2 คน โดยเก็บข้อมูล ชื่อ , อายุ , เพศ และคะแนนสะสม และแสดงผลออกมาบนหน้าจอ
-    
+
     Test case:
         Student A
-        Name : 
+        Name :
             Yorn
-        Score : 
+        Score :
             21.42
 
         Student B
-        Name : 
+        Name :
             Omen
-        Score : 
+        Score :
             56.00
 
         Student C
-        Name : 
+        Name :
             Alice
-        Score : 
+        Score :
             80.75
 
         Student D
-        Name : 
+        Name :
             Violet
-        Score : 
+        Score :
             67.76
 
     Output:
@@ -32,27 +32,27 @@
 
     Test case:
         Student A
-        Name : 
+        Name :
             Payna
-        Score : 
+        Score :
             77.77
-            
+
         Student B
-        Name : 
+        Name :
             Zanis
-        Score : 
+        Score :
             88.88
 
         Student C
-        Name : 
+        Name :
             Lubu
-        Score : 
+        Score :
             66.66
 
         Student D
-        Name : 
+        Name :
             Krixi
-        Score : 
+        Score :
             99.99
 
     Output:
@@ -61,32 +61,51 @@
 
 */
 
-#include<stdio.h>
+#include <stdio.h>
 
 struct Student
 {
-    char Name[20] ;
-    float score ; 
-}typedef S;
+    char Name[20];
+    float score;
+} typedef S;
 
-int main(){
+int main()
+{
 
-    char sn = 'A' ;
-    S sinfo[4] ;
+    char sn = 'A';
+    S sinfo[4];
 
     for (int i = 0; i < 4; i++)
     {
-        printf( "Student %c \nName : \n" , sn ) ;
-        scanf( "%s" , sinfo[i].Name ) ; 
-        printf( "Score : \n" ) ;
-        scanf( "%f" , &sinfo[i].score ) ;
-        sn++ ;
+        printf("Student %c \nName : \n", sn);
+        scanf("%s", sinfo[i].Name);
+        printf("Score : \n");
+        scanf("%f", &sinfo[i].score);
+        sn++;
     }
 
-    printf( "%s %s %s %s\n" , sinfo[0].Name , sinfo[1].Name , sinfo[2].Name , sinfo[3].Name) ;
-    printf( "%.2f %.2f %.2f %.2f" , sinfo[0].score , sinfo[1].score , sinfo[2].score , sinfo[3].score) ;     
+    for (int i = 0; i < 4; i++)
+    {
+        for (int j = i + 1; j < 4; j++)
+        {
+            if (sinfo[i].score < sinfo[j].score)
+            {
+                S temp = sinfo[i];
+                sinfo[i] = sinfo[j];
+                sinfo[j] = temp;
+            }
+        }
+    }
 
-    
+    for (int i = 0; i < 4; i++)
+    {
+        printf("%s ", sinfo[i].Name);
+    }
+    printf("\n");
+    for (int i = 0; i < 4; i++)
+    {
+        printf("%.2f ", sinfo[i].score);
+    }
 
-    return 0 ;
+    return 0;
 }
