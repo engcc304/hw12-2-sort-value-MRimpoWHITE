@@ -100,7 +100,7 @@ int main()
     for (int i = 0; i < 4; i++)
     {
         printf("%s", sinfo[i].Name);
-        if ( i < 4 )
+        if ( i < 3 )
         {
             printf(" ");
         }
@@ -110,7 +110,7 @@ int main()
     for (int i = 0; i < 4; i++)
     {
         printf("%.2f", sinfo[i].score);
-        if ( i < 4 )
+        if ( i < 3 )
         {
             printf(" ");
         }
