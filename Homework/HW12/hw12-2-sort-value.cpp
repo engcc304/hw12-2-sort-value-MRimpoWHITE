@@ -99,12 +99,21 @@ int main()
 
     for (int i = 0; i < 4; i++)
     {
-        printf("%s ", sinfo[i].Name);
+        printf("%s", sinfo[i].Name);
+        if ( i < 4 )
+        {
+            printf(" ");
+        }
+        
     }
     printf("\n");
     for (int i = 0; i < 4; i++)
     {
-        printf("%.2f ", sinfo[i].score);
+        printf("%.2f", sinfo[i].score);
+        if ( i < 4 )
+        {
+            printf(" ");
+        }
     }
 
     return 0;
