@@ -60,3 +60,33 @@
         99.99 88.88 77.77 66.66
 
 */
+
+#include<stdio.h>
+
+struct Student
+{
+    char Name[20] ;
+    float score ; 
+}typedef S;
+
+int main(){
+
+    char sn = 'A' ;
+    S sinfo[4] ;
+
+    for (int i = 0; i < 4; i++)
+    {
+        printf( "Student %c \nName : \n" , sn ) ;
+        scanf( "%s" , sinfo[i].Name ) ; 
+        printf( "Score : \n" ) ;
+        scanf( "%f" , &sinfo[i].score ) ;
+        sn++ ;
+    }
+
+    printf( "%s %s %s %s\n" , sinfo[0].Name , sinfo[1].Name , sinfo[2].Name , sinfo[3].Name) ;
+    printf( "%.2f %.2f %.2f %.2f" , sinfo[0].score , sinfo[1].score , sinfo[2].score , sinfo[3].score) ;     
+
+    
+
+    return 0 ;
+}
